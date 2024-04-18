@@ -2,15 +2,16 @@ import React from 'react'
 
 interface CategoryProps {
     params:{
-        category:string
+      categories:string,
+      searchParams?: string
     }
 }
 
 const Category = (props: CategoryProps) => {
     console.log(props);
-    const {category} = props.params
+    const {categories} = props.params
   return (
-    <div>Dinamic Category: {category}</div>
+    <div>Dinamic Category: {categories}</div>
   )
 }
 
