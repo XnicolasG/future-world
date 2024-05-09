@@ -1,7 +1,12 @@
 import React from 'react'
+import styles from './Hero.module.css'
 
 export const Hero = () => {
+  
   return (
-    <h1>Hero</h1>
+    <section className={styles.Hero}>
+    <h1 >Future World</h1>
+    <h2 className=''>Empowering your tomorrow</h2>
+    </section>
   )
 }

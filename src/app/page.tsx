@@ -12,3 +12,4 @@ export default function Home() {
     </main>
   );
 }
+/* sera que les digo que si quieren ir*/

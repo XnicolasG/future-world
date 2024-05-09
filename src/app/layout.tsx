@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from 'next/font/google'
 import { Header } from "app/components/Shared/Header";
 import { Footer } from "app/components/Shared/Footer";
+import './global.css'
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  weight: ['100', '500', '700'],
+  subsets:['latin']
+})
 
 export const metadata: Metadata = {
   title: "Future World Store",
@@ -17,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
        <Header />
         {children}
         <Footer />
