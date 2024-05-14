@@ -1,23 +1,45 @@
 import React from 'react'
-import {SHOPIFY_API_KEY, SHOPIFY_HOSTNAME } from '../../../env'
+import Image from 'next/image'
+import styles from './MainProducts.module.css'
+import { SHOPIFY_API_KEY, SHOPIFY_HOSTNAME } from '../../../env'
 
 
 const getProducts = async () => {
-  const res = await fetch (
-    `https://${SHOPIFY_HOSTNAME}/admin/api/2023-10/products.json`, {
-      headers:new Headers({
+  try {
+
+    const res = await fetch(
+      `https://${SHOPIFY_HOSTNAME}/admin/api/2023-10/products.json`, {
+      headers: new Headers({
         'X-Shopify-Access-Token': SHOPIFY_API_KEY || ""
       })
     })
-    const data = await res.json();
-    return data
+    const { products } = await res.json();
+    return products
+  } catch (error) {
+    console.log(error);
+
+  }
 }
 
 export const MainProducts = async () => {
   const products = await getProducts();
   console.log(products);
-  
+
   return (
-    <div>MainProducts</div>
+    <section className={styles.MainProducts}>
+      <h3>
+        ✨ New products released!
+      </h3>
+      <div className={styles.MainProducts_grid}>
+        {products?.map((item:any) => (
+
+          <article key={item.id}>
+            <p>{item.title}</p>
+            <Image className={styles.MainProducts_img} src={item.images[0].src} fill alt={item.title} />
+          </article>
+        ))
+        }
+      </div>
+    </section>
   )
 }
