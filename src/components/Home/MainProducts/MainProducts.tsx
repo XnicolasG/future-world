@@ -23,7 +23,7 @@ const getProducts = async () => {
 
 export const MainProducts = async () => {
   const products = await getProducts();
-  console.log(products);
+  // console.log(products);
 
   return (
     <section className={styles.MainProducts}>
@@ -31,11 +31,12 @@ export const MainProducts = async () => {
         ✨ New products released!
       </h3>
       <div className={styles.MainProducts_grid}>
-        {products?.map((item:any) => (
+        {products?.map((item: any) => (
 
           <article key={item.id}>
+            <img className={styles.MainProducts_img} src={item.images[0].src}
+              alt={item.title} />
             <p>{item.title}</p>
-            <Image className={styles.MainProducts_img} src={item.images[0].src} fill alt={item.title} />
           </article>
         ))
         }
