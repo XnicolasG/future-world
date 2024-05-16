@@ -1,0 +1,23 @@
+.NavBar{
+    display: flex ;
+    width: 100%;
+    height: auto;
+}
+.NavBar_container {
+    display: flex ;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+.NavBar_item{
+ list-style: none;
+ text-decoration: none ;
+ color: #e4e1f6;
+ font-size: larger;
+ font-weight: bolder;
+ transition: all .2s ease-in;
+}
+.NavBar_item:hover{
+    color: #7e1cae;
+}
