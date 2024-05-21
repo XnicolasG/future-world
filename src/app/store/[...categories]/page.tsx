@@ -8,7 +8,7 @@ interface CategoryProps {
 }
 
 const Category = (props: CategoryProps) => {
-    console.log(props);
+    console.log(props)
     const {categories} = props.params
   return (
     <div>Dinamic Category: {categories}</div>

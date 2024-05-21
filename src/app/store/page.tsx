@@ -1,8 +1,13 @@
+import { ProductsWrapper } from 'app/components/Store/ProductsWrapper'
+import { getProducts } from 'app/services/shopify'
 import React from 'react'
 
-const Store = () => {
+const Store = async () => {
+  const products = await getProducts()
   return (
-    <h1>Store</h1>
+    <>
+      <ProductsWrapper products={products }/>
+    </>
   )
 }
 
