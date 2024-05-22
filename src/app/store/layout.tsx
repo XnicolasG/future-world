@@ -1,9 +1,26 @@
+import { getCollections } from 'app/services/shopify/collections'
+import Link from 'next/link'
 import React from 'react'
+import styles from './layout.module.css'
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const layout = async ({ children }: { children: React.ReactNode }) => {
+    const collections = await getCollections()
     return (
         <main>
-            <nav>navegación</nav>
+            <nav
+                className={styles.collection}
+            >
+                {
+                    collections.map((collection: any) => (
+                        <Link
+                            className={styles.collection_item}
+                            key={collection.id}
+                            href={`/store/${collection.handle}`}>
+                            {collection.title}
+                        </Link>
+                    ))
+                }
+            </nav>
             {children}
         </main>
     )
