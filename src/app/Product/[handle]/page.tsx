@@ -9,9 +9,11 @@ interface ProductPageProps {
 }
 
 const page = async ({searchParams}: ProductPageProps) => {
-  const id = searchParams.id
+  const id = searchParams.id;
+  console.log(id);
+  
   const products = await getProducts(id)
-  const product = products[0]
+  const product = products[0] //[0] porque el objeto viene dentro de un array
   console.log(products);
   
   return (
