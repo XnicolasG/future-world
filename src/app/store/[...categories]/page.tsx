@@ -18,6 +18,7 @@ const Category = async (props: CategoryProps) => {
   const SelectedCollectionId = collections.find((coll: any) => coll.handle === categories[0]).id
   const SelectedCollectionTitle = collections.find((coll: any) => coll.handle === categories[0]).title
 
+
   if (SelectedCollectionId) {
     products = await getCollectionsProducts(SelectedCollectionId)
   } else {
