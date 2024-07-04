@@ -23,7 +23,7 @@ export const createAccessToken = async (email: string, password: string) => {
                 sameSite: 'strict', //cookie solo puede ser utilizada en nuestro sitio
             })
             console.log('signUp Successfull');
-            
+            return accessToken
         }
     } catch (error) {
         console.log(error + ': createAccessToken');

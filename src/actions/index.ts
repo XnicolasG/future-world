@@ -34,3 +34,12 @@ export const handleCreateUser = async (formData: FormData) => {
         
     }
 }
+
+export const handleLogin = async (formData: FormData) => {
+    const fromDataObject = Object.fromEntries(formData);
+    const accessToken = await createAccessToken(fromDataObject.email as string,fromDataObject.password as string )
+    if (accessToken){
+        return{redirect: '/store'}
+    }
+
+}
