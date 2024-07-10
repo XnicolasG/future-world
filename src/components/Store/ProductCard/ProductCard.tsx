@@ -11,6 +11,7 @@ export const ProductCard = ({ product }: ProductCardInterface) => {
     <Link href={`/Product/${product.handle}?id=${product.id}`} className={styles.ProductCard__link}>
       <article className={styles.ProductCard}>
         <Image
+        className={styles.ProductCard__Image}
           src={product.image}
           alt={product.title}
           quality={80}

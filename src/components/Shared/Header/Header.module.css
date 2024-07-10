@@ -6,12 +6,19 @@
 
 .NavBar_container {
     display: flex;
-    width: 100%;
-    justify-content: center;
+    width: 60%;
+    justify-content: flex-end;
     align-items: center;
     gap: 10%;
 }
-
+.NavBar_containerII{
+    display: flex;
+    width: 40%;
+    padding: 0px 4%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4%;
+}
 .NavBar_item {
     list-style: none;
     text-decoration: none;
@@ -28,8 +35,9 @@
 .NavBar_user {
     display: flex;
     align-items: center;
-    width: 150px;
-    padding: 5px 10px;
+    width: 100px;
+    padding: 5px;
+    cursor: pointer;
 }
 .NavBar_user::before {
     content: '•';

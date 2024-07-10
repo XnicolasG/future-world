@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './Header.module.css'
 import { cookies } from 'next/headers'
 import { validateAccessToken } from 'app/utilities/auth/validateAccessToken'
+import { ShoppingCart } from 'app/components/Store/ShoppingCart'
 
 export const Header = async () => {
   const customer = await validateAccessToken()
@@ -18,7 +19,10 @@ export const Header = async () => {
             <li>Store</li>
           </Link>
         </ul>
+        <ul className={styles.NavBar_containerII}>
         {customer?.firstName ? (<p className={styles.NavBar_user}>{customer.firstName}</p>) : (<Link href='/login'>Login</Link>)}
+        <ShoppingCart />
+        </ul>
       </nav>
     </header>
   )

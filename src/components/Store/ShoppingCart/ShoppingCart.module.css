@@ -1,0 +1,16 @@
+.cartButton{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+}
+.cartButton_icon{
+    fill: #fff;
+    width: 1.25rem;
+    height: 2rem;
+    transition: transform .3s ease-in-out;
+}
+.cartButton_icon:hover{
+    transform: translateY(-5px);
+}
