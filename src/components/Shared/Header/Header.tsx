@@ -18,7 +18,7 @@ export const Header = async () => {
             <li>Store</li>
           </Link>
         </ul>
-        {customer?.firstName ? (<p>Hola {customer.firstName}</p>) : (<Link href='/login'>Login</Link>)}
+        {customer?.firstName ? (<p className={styles.NavBar_user}>{customer.firstName}</p>) : (<Link href='/login'>Login</Link>)}
       </nav>
     </header>
   )
