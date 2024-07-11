@@ -8,3 +8,10 @@ type ProductType = {
     handle: string;
     tags: string;
   };
+
+  type cartItem = {
+    title: string;
+    price: number;
+    quantity:number;
+    id:string;
+  }
