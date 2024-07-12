@@ -8,13 +8,14 @@ export const ShoppingCart = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { cart } = useShoppingCart();
     const handleOpen = () => setIsOpen(!isOpen)
+    
     return (
         <button
             onClick={handleOpen}
             className={styles.cartButton}>
             <span className={styles.cartButton_counter}>{cart.length}</span>
             <FaShoppingCart className={styles.cartButton_icon} />
-            {isOpen && (
+            {isOpen  && (
                 <div
                     className={styles.cartButton_items}
                 >
