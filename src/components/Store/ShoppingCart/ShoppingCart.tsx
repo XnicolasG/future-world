@@ -3,11 +3,20 @@ import React, { useState } from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
 import styles from './ShoppingCart.module.css'
 import { useShoppingCart } from 'app/hooks/useShoppingCart'
+import { ShoppingCartItem } from './ShoppingCartItems'
 
 export const ShoppingCart = () => {
-    const [isOpen, setIsOpen] = useState(false);
     const { cart } = useShoppingCart();
-    const handleOpen = () => setIsOpen(!isOpen)
+    const [isBuying, setIsBuying] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const hasItems = cart.length > 0;
+
+    const handleOpen = () => {
+        if(hasItems){
+            setIsOpen(!isOpen)
+        }
+    };
+    console.log(cart);
     
     return (
         <button
@@ -15,18 +24,13 @@ export const ShoppingCart = () => {
             className={styles.cartButton}>
             <span className={styles.cartButton_counter}>{cart.length}</span>
             <FaShoppingCart className={styles.cartButton_icon} />
-            {isOpen  && (
+            {isOpen && hasItems && (
                 <div
                     className={styles.cartButton_items}
                 >
                     {
                         cart.map((item) => (
-                            <>
-                                <p key={item?.id}>
-                                    {item?.title}
-                                </p>
-                                <p>Quantity: {item?.quantity}</p>
-                            </>
+                            <ShoppingCartItem key={item.id} item={item} />
                         ))
                     }
                     <button className={styles.cartButton_buy}>Buy</button>

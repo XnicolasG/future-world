@@ -4,6 +4,9 @@ import styles from './Header.module.css'
 import { cookies } from 'next/headers'
 import { validateAccessToken } from 'app/utilities/auth/validateAccessToken'
 import { ShoppingCart } from 'app/components/Store/ShoppingCart'
+import dynamic from 'next/dynamic'
+
+
 
 export const Header = async () => {
   const customer = await validateAccessToken()
