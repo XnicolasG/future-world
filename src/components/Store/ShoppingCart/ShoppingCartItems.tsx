@@ -11,7 +11,7 @@ interface ShoppingCartItemProps {
 
 export const ShoppingCartItem = ({ item }: ShoppingCartItemProps) => {
     
-    console.log(item);
+  
   const { removeCartItem } = useShoppingCart();
 
   return (
