@@ -6,6 +6,6 @@ export const env = {
     SHOPIFY_GRAPHQL_ENDPOINT: process.env.SHOPIFY_GRAPHQL_ENDPOINT,
     SHOPIFY_STOREFRONT_TOKEN:process.env.SHOPIFY_STOREFRONT_TOKEN,
     OPEN_AI_KEY: process.env.OPEN_AI_KEY,
-    GEMINI_KEY: process.env.GEMINI_KEY,
+    GOOGLE_KEY: process.env.GOOGLE_KEY,
     
 }
