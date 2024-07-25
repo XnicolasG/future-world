@@ -1,0 +1,12 @@
+import { config } from "./config";
+
+export const env = {
+    SHOPIFY_API_KEY : config.SHOPIFY_API_KEY,
+    SHOPIFY_HOSTNAME: config.SHOPIFY_HOSTNAME ,
+    CACHE_TOKEN: config.CACHE_TOKEN ,
+    SHOPIFY_GRAPHQL_ENDPOINT: config.SHOPIFY_GRAPHQL_ENDPOINT,
+    SHOPIFY_STOREFRONT_TOKEN:config.SHOPIFY_STOREFRONT_TOKEN,
+    OPEN_AI_KEY: config.OPEN_AI_KEY,
+    GEMINI_KEY: config.GEMINI_KEY,
+    
+}
