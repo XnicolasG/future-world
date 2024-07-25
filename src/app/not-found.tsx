@@ -14,7 +14,7 @@ export default function NotFound() {
       <h2 className="NotFound__subtitle">
         ¡Looks like we lost our path!
       </h2>
-      <p className="NotFound__description">But we're open 24/7</p>
+      <p className="NotFound__description">{`But we're open 24/7`}</p>
       <Link className="NotFound__link" href="/store">
         Go Shoping
       </Link>
