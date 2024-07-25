@@ -2,11 +2,13 @@ import { env } from 'app/env';
 import {shopifyUrls} from './url'
 
 export const getCollections = async () => {
+  console.log(process.env.SHOPIFY_API_KEY);
+  
     try {
   
       const res = await fetch(shopifyUrls.collections.all,  {
         headers: new Headers({
-          'X-Shopify-Access-Token': env.SHOPIFY_API_KEY
+          'X-Shopify-Access-Token': env.SHOPIFY_API_KEY || ''
         })
       })      
       const { smart_collections } = await res.json()
