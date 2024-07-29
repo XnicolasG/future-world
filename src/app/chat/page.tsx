@@ -1,34 +1,14 @@
 'use client'
+import { Chat } from 'app/components/chat/Chat'
+import React from 'react'
 
-import React, { useState } from 'react'
+ const ChatBot = async () => {
 
- const ChatBot = () => {
-  const [state, setState] = useState({
-    messages: [],
-    userInput: ''
-  });
-  const updateState = (updates: any) => {
-    setState((prevState) =>( {
-      ...prevState,
-      ...updates
-    }))
-  }
-  const handleSubmit = async (e : Event) =>{
-    e.preventDefault();
-    updateState({
-      messages: [...state.messages, {role: 'user', content:state.userInput}],
-      userInput: ''
-    });
-
-    try {
-      
-    } catch (error: any) {
-      console.log(error);
-      
-    }
-  }
   return (
-    <div>Chat</div>
+    <>
+      <h1>Chat</h1>
+      <Chat />
+    </>
   )
 }
 export default ChatBot
