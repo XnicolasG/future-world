@@ -3,11 +3,9 @@ import React, { useState } from 'react'
 import styles from './NewAccountForm.module.css'
 import { handleCreateUser } from 'app/actions';
 
-export const NewAccountForm = ({ cookies }: { cookies: string }) => {
+export const NewAccountForm = () => {
     const [errors, setErrors] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(false)
-    console.log(cookies);
-    
     const handleSubmit = async (event:any) => {
         event.preventDefault()
         const formData = new FormData(event.target);
