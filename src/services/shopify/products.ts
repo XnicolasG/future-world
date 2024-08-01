@@ -1,13 +1,13 @@
 import { env } from 'app/env';
 import { shopifyUrls } from './url'
 
-export const getProducts = async (id?: string): Promise<ProductType[]> => {
+export const getProducts = async (id?: string) => {
   try {
     const apiUrl = id ? `${shopifyUrls.products.all}?ids=${id}` : shopifyUrls.products.all;
 
     const res = await fetch(apiUrl, {
       headers: new Headers({
-        'X-Shopify-Access-Token': env.SHOPIFY_API_KEY
+        'X-Shopify-Access-Token': env.SHOPIFY_API_KEY || ''
       })
     })
     //{products} es porque la respuesta o res.json en este caso, me trae la información dentro de un objeto llamado products y por eso lo destructuro
@@ -38,7 +38,7 @@ export const getMainProducts = async () => {
   try {
     const res = await fetch(shopifyUrls.products.MainProducts, {
       headers: new Headers({
-        'X-Shopify-Access-Token': env.SHOPIFY_API_KEY
+        'X-Shopify-Access-Token': env.SHOPIFY_API_KEY || ''
       }),
       cache:'force-cache',
       next:{
