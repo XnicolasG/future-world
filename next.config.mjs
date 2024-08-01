@@ -4,6 +4,7 @@ import { hostname } from 'os';
 
 /** @type {import('next').NextConfig} */
 
+// module.exports = withBundleAnalyzer({})
 // Get the directory name of the current module
 const nextConfig = {
     images: {

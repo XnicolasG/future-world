@@ -3,6 +3,9 @@ import Link from 'next/link'
 import React from 'react'
 import styles from './layout.module.css'
 
+export const runtime = 'edge'
+
+
 const layout = async ({ children }: { children: React.ReactNode }) => {
     const collections = await getCollections()
     console.log(collections);

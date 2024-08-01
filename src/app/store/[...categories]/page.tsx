@@ -2,12 +2,15 @@ import { ProductsWrapper } from 'app/components/Store/ProductsWrapper'
 import { getCollections, getCollectionsProducts } from 'app/services/shopify/collections'
 import React from 'react'
 
+
 interface CategoryProps {
   params: {
     categories: string,
     searchParams?: string
   }
 }
+
+// awfrao  shopify password access
 
 const Category = async (props: CategoryProps) => {
   const { categories } = props.params
