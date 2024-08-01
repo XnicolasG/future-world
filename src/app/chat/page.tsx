@@ -7,7 +7,7 @@ import React from 'react'
   return (
     <>
       <h1>Chat</h1>
-      <Chat />
+      {/* <Chat /> */}
     </>
   )
 }
